@@ -1,0 +1,704 @@
+@font-face {
+  font-family: 'Myriad Pro';
+  src: url('../fonts/MyriadPro-Regular.eot');
+  src: url('../fonts/MyriadPro-Regular.woff2') format('woff2'),
+       url('../fonts/MyriadPro-Regular.woff') format('woff'),
+       url('../fonts/MyriadPro-Regular.ttf') format('truetype'),
+       url('../fonts/MyriadPro-Regular.svg#MyriadPro-Regular') format('svg'),
+       url('../fonts/MyriadPro-Regular.eot?#iefix') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Myriad Pro B';
+  src: url('../fonts/MyriadPro-Bold.eot');
+  src: url('../fonts/MyriadPro-Bold.woff2') format('woff2'),
+       url('../fonts/MyriadPro-Bold.woff') format('woff'),
+       url('../fonts/MyriadPro-Bold.ttf') format('truetype'),
+       url('../fonts/MyriadPro-Bold.svg#MyriadPro-Bold') format('svg'),
+       url('../fonts/MyriadPro-Bold.eot?#iefix') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+section{
+	width: 100%;
+}
+
+.graphContainer{
+	max-width: 700px;
+	height: 500px;
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	font-family: 'Myriad Pro';
+}
+
+.graph{
+	background-color: #fff;
+	position: relative;
+}
+
+.column-graph{
+	width: 100%;
+	display: flex;
+	padding: 30px 0;
+	height: calc(100% - 60px);
+}
+
+.graph-index{
+	position: relative;
+	height: 100%;
+	width: 100%;
+	border-left: 2px solid #cecece;
+	height: 100%;
+}
+
+.graph-index:last-of-type{
+	width: 2px;
+}
+
+.valueDot{
+	position: absolute;
+	width: 6px;
+	height: 6px;
+	background-color: #c4e0e3;
+	border: 5px solid #fff;
+	left: -9px;
+	border-radius: 100%;
+	transition: 0.3s;
+	z-index: 10;
+	cursor: pointer;
+	transform: translateY(4px);
+}
+
+.valueDot:hover{
+	background-color: #1eb8b4 !important;
+	border-color: #283786;
+	box-shadow: 0 0 10px 5px rgba(23, 179, 175, 0.4);
+}
+
+.value-index{
+	color: #cecece;
+	position: absolute;
+	text-align: center;
+	top: -20px;
+}
+
+.value-index:nth-of-type(2){
+	bottom: -20px;
+	top: auto;
+}
+
+.line-graph .graph-index{
+	transition: 0.3s;
+}
+
+.line-graph .line-graph-line{
+	height: auto;
+	left: 0;
+	position: absolute;
+	max-width: 100%;
+}
+
+.line-graph .line-graph-line div{
+	height: 4px;
+	background-color: #c4e0e3;
+	left: 0;
+	transform-origin: left 0;
+	transition: 0.3s opacity;
+	opacity: 0;
+}
+
+.graph-index-hovered .valueDot, .lastActive .valueDot{
+	width: 10px;
+	height: 10px;
+	background-color: #1f98d1;
+	transform: translate(0, 8px);
+	border: 4px solid #fff;
+}
+
+.graph-index-hovered .value-index, .lastActive .value-index{
+	color: #2b388f;
+	font-family: "Myriad Pro B";
+}
+
+.realValue{
+	position: absolute;
+	display: inline-block;
+	max-width: 100px;
+	text-align: center;
+	left: 15px;
+	bottom: -20px;
+	font-size: 18px;
+	font-family: "Myriad Pro B";
+	transition: 0.2s;
+	opacity: 0;
+	z-index: -1;
+}
+
+.valueDot:hover .realValue{
+	opacity: 1;
+	z-index: 1;
+}
+
+.graph-index-hovered{
+	background-color: #e7e5f2;
+	border-color: #8e95b2;
+}
+
+.lastActive{
+	border-color: #8e95b2;
+	background-color: #fff;
+}
+
+.graph-index-hovered .line-graph-line div{
+	background-color: #a19bc3;
+}
+
+.horizontal-scale{
+	position: absolute;
+	width: 100%;
+	border-top: 2px dashed #cecece;
+	left: 0;
+	z-index: 10;
+}
+
+.horizontal-scale .scales{
+	position: absolute;
+	top: -8px;
+	left: -35px;
+	min-width: 25px;
+	text-align: right;
+	color: #cecece;
+}
+
+.horizontal-scale .scales:last-of-type{
+	left: auto;
+	right: -35px;
+	text-align: left;
+}
+
+.graph-with-titles{
+	display: flex;
+	align-items: stretch;
+	padding-top: 30px;
+}
+
+.titles-container{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	padding: 40px 0;
+	font-family: "Myriad Pro";
+}
+
+.graph-with-titles > div{
+	width: calc(50% - 20px);
+}
+
+.graph-row-name{
+	font-size: 25px;
+	font-weight: 700;
+	width: 100%;
+	height: 60px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: 20px 0;
+	background: #fff !important;
+}
+
+.stretch-height.graphContainer{
+	display: flex;
+	height: auto !important;
+}
+
+.stretch-height .graph, .stretch-height .graph > div{
+	height: auto;
+	position: relative;
+}
+
+.graph-body{
+	width: 100% !important;
+	height: calc(100% - 80px) !important;
+	border: 0;
+	position: absolute !important;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	z-index: 10;
+}
+
+.horizontal-bar{
+	position: absolute;
+	height: 60px;
+	background: linear-gradient(to right, #20a9ef 20%, #1792d0 80%);
+	width: 0;
+	transition: 0.5s;
+}
+
+.bar-value{
+	position: absolute;
+	height: 70px;
+	width: 70px;
+	border-radius: 100%;
+	top: -9px;
+	right: -35px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #fff;
+	font-size: 25px;
+	color: #1792d0;
+	border: 4px solid #1792d0;
+	box-shadow: 0 0 4px 2px rgba(0, 0, 0, 0.4);
+}
+
+.bar-index{
+	position: absolute;
+	font-size: 20px;
+	color: #cecece;
+	top: calc(50% - 10px);
+	width: 21px;
+	left: -30px;
+}
+
+.heading-container{
+	text-align: center;
+}
+
+.heading3{
+	background-color: #456db5;
+	font-size: 23px;
+	text-transform: uppercase;
+	font-family: "Myriad Pro B";
+	color: #fff;
+	padding: 10px 20px;
+	display: inline-block;
+	margin-left: auto;
+	margin-right: auto;
+	margin: 40px 0;
+}
+
+.gradation{
+	position: absolute !important;
+	width: 100%;
+	height: 30px !important;
+	top: -25px;
+}
+
+.gradation div{
+	display: inline-block;
+	color: #cecece;
+	height: 100%;
+	line-height: 30px;
+	box-shadow: inset 2px 0 0 0 #cecece;
+	text-transform: uppercase;
+	font-size: 12px;
+	text-align: center;
+	float: left;
+}
+
+.gradation div:last-of-type{
+	box-shadow: inset -2px 0 0 0 #cecece, inset 2px 0 0 0 #cecece;
+}
+
+.row-name{
+	width: 70%;
+	text-align: right;
+}
+
+.row-img{
+	width: 30%;
+	text-align: center;
+}
+
+.row-img img{
+	max-width: 100%;
+}
+
+.threeD-column-graph{
+	display: flex;
+	justify-content: center;
+	height: 500px;
+	align-items: flex-end;
+}
+
+.threeD-column{
+	width: 50px;
+	background: linear-gradient(to top, #21afd4 20%, #1594b5);
+	margin: 0 15px;
+	position: relative;
+	transition: 0.3s;
+	transform: translateY(-15px);
+	cursor: pointer;
+	height: 0;
+}
+
+.threeD-column:after, .threeD-column:before, .dif3DGraph:after, .dif3DGraph:before{
+	content: "";
+	width: 100%;
+	height: 25px;
+	border-radius: 100%;
+	position: absolute;
+}
+
+.threeD-column:after, .dif3DGraph:after{
+	background-color: #83bece;
+	top: -12.5px;
+}
+
+.threeD-column:before, .dif3DGraph:before{
+	background-color: #21afd4;
+	bottom: -12.5px;
+}
+
+.threeD-column:hover{
+	background: linear-gradient(to top, #22d4ce 20%, #1abbb6);
+	color: #1abbb6;
+}
+
+.threeD-column:hover:before{
+	background-color: #22d4ce;
+}
+
+.threeD-column:hover:after{
+	background-color: #82cdc9;
+}
+
+.threeD-column .currentValue{
+	position: absolute;
+	font-size: 22px;
+	text-transform: uppercase;
+	color: #1594b5;
+	transition: 0.3s;
+	width: 100%;
+	text-align: center;
+	top: 0;
+	margin-top: -100%;
+}
+
+.threeD-from-set-graph{
+	padding: 100px 0 30px 0;
+}
+
+.threeD-from-set-graph .threeD-column{
+	background-color: #3c4ca2 !important;
+	background: none;
+	display: none;
+}
+
+.threeD-from-set-graph .threeD-column:before{
+	background-color: #3c4ca2 !important;
+}
+
+.threeD-from-set-graph .threeD-column:after{
+	background-color: #8091ec;
+}
+
+.dif3DGraph{
+	width: 100%;
+	background: linear-gradient(to top, #21afd4 20%, #1594b5);
+	position: relative;
+}
+
+.dif3DGraph:after, .dif3DGraph:before{
+	/*background-color: #3c4ca2;*/
+	height: 26px;
+	z-index: 10;
+}
+
+.setGraphs{
+	background-color: #f9f9f9;
+	max-width: 100%;
+	display: flex;
+	align-items: stretch;
+	justify-content: space-around;
+	height: 500px;
+	max-height: 100%;
+	padding: 40px 0;
+	width: 1000px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.chooseYear, .chooseIndicators{
+	display: flex;
+	flex-direction: column;
+	font-family: "Myriad Pro";
+}
+
+.outGraph{
+	display: flex;
+	flex: 1 1 auto;
+	position: relative;
+}
+
+.setYear{
+	display: flex;
+	flex: 1 1 auto;
+	flex-direction: column;
+	align-items: center;
+	-moz-user-select: none;
+	-khtml-user-select: none;
+	user-select: none;
+	position: relative;
+}
+
+.yearNotation{
+	color: #828282;
+	font-size: 16px;
+	width: 70%;
+	flex: 1 1 auto;
+	position: relative;
+	background-color: transparent !important;
+}
+
+.yearNotation:after, .yearNotation:before{
+	content: "";
+	background-color: #dddee0;
+	position: absolute;
+	z-index: 5;
+}
+
+.yearNotation:after{	
+	left: 0;
+	top: 18px;
+	width: 100%;
+	height: 1px;
+}
+
+.yearNotation:before{	
+	right: 24px;
+	top: 20px;
+	width: 1px;
+	height: 100%;
+}
+
+.yearNotation .valueDot{
+	width: 10px;
+	height: 10px;
+	right: 15px;
+	transform: translateY(-8px);
+	left: auto;
+	background-color: #dddee0;
+}
+
+.mid{
+	position: absolute;
+	width: 15px;
+	height: 1px;
+	background-color: #dddee0;
+	right: 24px;
+	top: calc(50% + 19px);
+}
+
+.lastItem{
+	flex: 0 1 auto;
+	overflow: hidden;
+	height: 35px;
+}
+
+.yearNotation:first-of-type:before{
+	top: 0;
+	height: calc(100% + 20px);
+}
+
+.activeDot{
+	color: #253372;
+	font-weight: 700;
+}
+
+.activeDot .valueDot, .activeDot.yearNotation:after, .activeDot.yearNotation:before{
+	background-color: #253372;
+}
+
+.activeDot.yearNotation:after{
+	height: 3px;
+}
+
+.activeDot.yearNotation:before{
+	width: 3px;
+	right: 23px;
+}
+
+.yearNotation.lastActive:before{
+	background-color: #dddee0;
+	width: 1px;
+	right: 24px;
+}
+
+.activeDot.yearNotation .valueDot:hover{
+	background-color: #fff !important;
+	border-color: #253372;
+}
+
+.draggable{
+	position: absolute;
+	top: 0;
+	width: 20px;
+	height: 20px;
+	z-index: 30;
+	background-color: red;
+	transition: 0.3s;
+	right: calc(15% + 15px);
+}
+
+.rangeGraph{
+	margin-top: 18px;
+	position: absolute;
+	right: 46px;
+	border: 0 !important;
+	background-color: transparent;
+}
+
+.ui-slider-handle{
+	z-index: 20 !important;
+	border-radius: 100%;
+	outline: none;
+	width: 12px !important;
+	height: 12px !important;
+	border: 4px solid #253372 !important;
+	cursor: pointer !important;
+	transition: 0.3s;
+}
+
+.ui-slider-handle:hover{
+	box-shadow: 0 0 5px 3px #596dca;
+}
+
+.ui-slider-vertical .ui-slider-range{
+	background-color: transparent;
+}
+
+.chooseIndicator{
+	display: flex;
+	flex-direction: column;
+}
+
+.switchGraph{
+	display: flex;
+	flex: 1 1 auto;
+	flex-direction: column;
+	height: 100%;
+	justify-content: center;
+}
+
+.radioCont{
+	margin: 15px 0;
+	display: flex;
+	/*align-items: center;*/
+}
+
+.radioCont:first-of-type{
+	margin-top: 0;
+}
+
+.radioCont:last-of-type{
+	margin-bottom: 0;
+}
+
+.radioCont p{
+	font-family: "Myriad Pro";
+	margin: 0;
+	font-size: 13px;
+	margin-left: 20px;
+}
+
+.radioCont span{
+	font-size: 15px;
+	display: block;
+	margin-bottom: 5px;
+}
+
+.radioCont input{
+	position: relative;
+	/*opacity: 0;*/
+	width: 25px;
+	height: 25px;
+	margin: 0;
+}
+
+.radioCont input:after{
+	content: "";
+	position: absolute;
+	width: 25px;
+	height: 25px;
+	border: 2px solid #919193;
+	top: 0;
+	left: 0;
+	background-color: #fff;
+	cursor: pointer;
+}
+
+.radioCont input:checked:after{
+	background-image: url(../img/checked.png);
+	background-size: 80% auto;
+	background-position: 50% 50%;
+	background-color: #2c3790;
+	background-repeat: no-repeat;
+}
+
+.listOfGraphs{
+	display: none;
+}
+
+.decreaseStat .dif3DGraph{
+	background: none;
+	background-color: #83b6c36b;
+}
+
+.decreaseStat .threeD-column:after{
+	display: none;
+}
+
+.decreaseStat .dif3DGraph:after{
+	background: linear-gradient(to top, #83b6c36b calc(50% + 0.2px), #adced7f2 calc(50% + 0.2px));
+}
+
+.decreaseStat .dif3DGraph:before{
+	background-color: #83b6c3a6;
+}
+
+.threeD-from-set-graph .currentValue{
+	color: #2b3c8c;
+	font-family: "Myriad Pro B";
+	font-size: 22px;
+}
+
+.decreaseStat .changeInValue{
+	color: #a09f9f;
+}
+
+.changeInValue{
+	color: #0083c0;
+	font-family: "Myriad Pro";
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	position: absolute;
+	margin-top: calc(-100% - 15px);
+	min-width: 90px;
+	text-align: center;
+	left: calc(-50% + 8px);
+	font-size: 12px;
+}
+
+.changeInValue span{
+	display: block;
+	font-family: "Myriad Pro B";
+	font-size: 18px;
+	margin-bottom: 5px;
+}
+
+.labelYear{
+	position: absolute;
+	bottom: -35px;
+	width: 100%;
+	text-align: center;
+	color: #2c388e;
+	letter-spacing: 0.4px;
+	font-size: 12px;
+}

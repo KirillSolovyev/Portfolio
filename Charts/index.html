@@ -1,0 +1,179 @@
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width">
+	<meta name="format-detection" content="telephone=no">
+	<title>Graphs</title>
+	<link href="css/jquery-ui.min.css" rel="stylesheet" type="text/css">
+	<link href="css/reset.css" rel="stylesheet" type="text/css">
+	<link href="css/style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+	<div class="setGraphs">
+		<div class="chooseYear">
+			<div class="heading-container">
+				<h3 class="heading3">Укажите год</h3>
+			</div>
+			<div class="outGraph">
+				<div class="setYear" max-value="2017" start-index="2009" index-interval="1" range-of-active-start="2012" range-of-active-end="2016"></div>
+				<div class="rangeGraph"></div>
+			</div>
+		</div>
+		<div class="chooseIndicator">
+			<div class="heading-container">
+				<h3 class="heading3">Выберите показатели</h3>
+			</div>
+			<div class="switchGraph">
+				<div class="radioCont">
+					<input type="radio" name="switchGraph" checked="checked" for-graph="#graph1"/>
+					<p><span>Выручка по МСФО</span>млрд рублей</p>
+				</div>
+				<div class="radioCont">
+					<input type="radio" name="switchGraph" for-graph="#graph2"/>
+					<p><span>Объем выработки<br /> электроэнергии</span>млрд кВт/ч</p>
+				</div>
+				<div class="radioCont">
+					<input type="radio" name="switchGraph" for-graph="#graph3"/>
+					<p><span>Выполнение<br /> государственных заданий</span>(оборонный заказ %)</p>
+				</div>
+				<div class="radioCont">
+					<input type="radio" name="switchGraph" for-graph="#graph4"/>
+					<p><span>Портфель<br /> зарубежных заказов<br /> на 10-летний период,</span>млрд долл. США</p>
+				</div>
+				<div class="radioCont">
+					<input type="radio" name="switchGraph" for-graph="#graph5"/>
+					<p><span>Прирост консолидированной<br /> производительности труда<br /> к 2011 году</span>(в действующих ценах без ЯОК), %</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<section>
+		<div class="graphContainer graphSpace"></div>
+		<div class="listOfGraphs">
+			<div id="graph1">
+				<div class="graph column-graph line-graph fromSetGraph" max-value="1000" start-index="2009" index-interval="1" scale-interval="100" range-of-active-start="2012" range-of-active-end="2016" start-value="400">
+					<div class="graph-index" value="458.2"></div>
+					<div class="graph-index" value="498.0"></div>
+					<div class="graph-index" value="464.2"></div>
+					<div class="graph-index" value="473.8"></div>
+					<div class="graph-index" value="529.2"></div>
+					<div class="graph-index" value="618.3"></div>
+					<div class="graph-index" value="821.2"></div>
+					<div class="graph-index" value="878.1"></div>
+					<div class="graph-index" value="967.4"></div>
+				</div>
+				<div class="graph threeD-column-graph threeD-from-set-graph" max-value="1000" range-of-active-start="3" range-of-active-end="7" start-year="2009">
+					<div class="threeD-column" value="458.2" prev-value="458"></div>
+					<div class="threeD-column" value="498.0" prev-value="458.2"></div>
+					<div class="threeD-column" value="464.2" prev-value="498.0"></div>
+					<div class="threeD-column" value="473.8" prev-value="464.2"></div>
+					<div class="threeD-column" value="529.2" prev-value="473.8"></div>
+					<div class="threeD-column" value="618.3" prev-value="529.2"></div>
+					<div class="threeD-column" value="821.2" prev-value="618.3"></div>
+					<div class="threeD-column" value="878.1" prev-value="821.2"></div>
+					<div class="threeD-column" value="967.4" prev-value="878.1"></div>
+				</div>
+			</div>
+			<div id="graph2">
+				<div class="graph column-graph line-graph fromSetGraph" max-value="210" start-index="2009" index-interval="1" scale-interval="10" range-of-active-start="2012" range-of-active-end="2016" start-value="150">
+					<div class="graph-index" value="163.3" ></div>
+					<div class="graph-index" value="170.1"></div>
+					<div class="graph-index" value="172.7"></div>
+					<div class="graph-index" value="177.3"></div>
+					<div class="graph-index" value="172.2"></div>
+					<div class="graph-index" value="180.5"></div>
+					<div class="graph-index" value="195.2"></div>
+					<div class="graph-index" value="196.4"></div>
+					<div class="graph-index" value="202.9"></div>
+				</div>
+				<div class="graph threeD-column-graph threeD-from-set-graph" max-value="210" range-of-active-start="2" range-of-active-end="8" start-year="2009">
+					<div class="threeD-column" value="163.3" prev-value="163.3"></div>
+					<div class="threeD-column" value="170.1" prev-value="163.3"></div>
+					<div class="threeD-column" value="172.7" prev-value="170.1"></div>
+					<div class="threeD-column" value="177.3" prev-value="172.7"></div>
+					<div class="threeD-column" value="172.2" prev-value="177.3"></div>
+					<div class="threeD-column" value="180.5" prev-value="172.2"></div>
+					<div class="threeD-column" value="195.2" prev-value="180.5"></div>
+					<div class="threeD-column" value="196.4" prev-value="195.2"></div>
+					<div class="threeD-column" value="202.9" prev-value="196.4"></div>
+				</div>
+			</div>
+			<div id="graph3">
+				<div class="graph column-graph line-graph fromSetGraph" max-value="100" start-index="2009" index-interval="1" scale-interval="10" range-of-active-start="2012" range-of-active-end="2016" start-value="80">
+					<div class="graph-index" value="100" ></div>
+					<div class="graph-index" value="100"></div>
+					<div class="graph-index" value="100"></div>
+					<div class="graph-index" value="100"></div>
+					<div class="graph-index" value="100"></div>
+					<div class="graph-index" value="100"></div>
+					<div class="graph-index" value="100"></div>
+					<div class="graph-index" value="100"></div>
+					<div class="graph-index" value="100"></div>
+				</div>
+				<div class="graph threeD-column-graph threeD-from-set-graph" max-value="140" range-of-active-start="2" range-of-active-end="8" start-year="2009">
+					<div class="threeD-column" value="100" prev-value="100"></div>
+					<div class="threeD-column" value="100" prev-value="100"></div>
+					<div class="threeD-column" value="100" prev-value="100"></div>
+					<div class="threeD-column" value="100" prev-value="100"></div>
+					<div class="threeD-column" value="100" prev-value="100"></div>
+					<div class="threeD-column" value="100" prev-value="100"></div>
+					<div class="threeD-column" value="100" prev-value="100"></div>
+					<div class="threeD-column" value="100" prev-value="100"></div>
+					<div class="threeD-column" value="100" prev-value="100"></div>
+				</div>
+			</div>
+			<div id="graph4">
+				<div class="graph column-graph line-graph fromSetGraph" max-value="140" start-index="2009" index-interval="1" scale-interval="10" range-of-active-start="2012" range-of-active-end="2016" start-value="0">
+					<div class="graph-index" value="8" ></div>
+					<div class="graph-index" value="22.4"></div>
+					<div class="graph-index" value="28.6"></div>
+					<div class="graph-index" value="66.5"></div>
+					<div class="graph-index" value="72.7"></div>
+					<div class="graph-index" value="101.4"></div>
+					<div class="graph-index" value="110.3"></div>
+					<div class="graph-index" value="133.4"></div>
+					<div class="graph-index" value="133.5"></div>
+				</div>
+				<div class="graph threeD-column-graph threeD-from-set-graph" max-value="140" range-of-active-start="2" range-of-active-end="8" start-year="2009">
+					<div class="threeD-column" value="8" prev-value="8"></div>
+					<div class="threeD-column" value="22.4" prev-value="8"></div>
+					<div class="threeD-column" value="28.6" prev-value="22.4"></div>
+					<div class="threeD-column" value="66.5" prev-value="28.6"></div>
+					<div class="threeD-column" value="72.7" prev-value="66.5"></div>
+					<div class="threeD-column" value="101.4" prev-value="72.7"></div>
+					<div class="threeD-column" value="110.3" prev-value="101.4"></div>
+					<div class="threeD-column" value="133.4" prev-value="110.3"></div>
+					<div class="threeD-column" value="133.5" prev-value="133.4"></div>
+				</div>
+			</div>
+			<div id="graph5">
+				<div class="graph column-graph line-graph fromSetGraph" max-value="140" start-index="2009" index-interval="1" scale-interval="20" range-of-active-start="2012" range-of-active-end="2016" start-value="0">
+					<div class="graph-index" value="117.8" ></div>
+					<div class="graph-index" value="121.7"></div>
+					<div class="graph-index" value="23"></div>
+					<div class="graph-index" value="111.1"></div>
+					<div class="graph-index" value="28.5"></div>
+					<div class="graph-index" value="37.5"></div>
+					<div class="graph-index" value="93.5"></div>
+					<div class="graph-index" value="110.9"></div>
+					<div class="graph-index" value="134.3"></div>
+				</div>
+				<div class="graph threeD-column-graph threeD-from-set-graph" max-value="140" range-of-active-start="2" range-of-active-end="8" start-year="2009">
+					<div class="threeD-column" value="117.8" prev-value="117.8"></div>
+					<div class="threeD-column" value="121.7" prev-value="117.8"></div>
+					<div class="threeD-column" value="23" prev-value="121.7"></div>
+					<div class="threeD-column" value="111.1" prev-value="23"></div>
+					<div class="threeD-column" value="28.5" prev-value="111.1"></div>
+					<div class="threeD-column" value="37.5" prev-value="28.5"></div>
+					<div class="threeD-column" value="93.5" prev-value="37.5"></div>
+					<div class="threeD-column" value="110.9" prev-value="93.5"></div>
+					<div class="threeD-column" value="134.3" prev-value="110.9"></div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<script type="text/javascript" src="js/jQuery.min.js"></script>
+	<script type="text/javascript" src="js/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="js/script.js"></script>
+</body>
+</html>
